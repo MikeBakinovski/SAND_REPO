@@ -1,40 +1,20 @@
-# SAND_REPO
+# 02. GIT Local Home Work 
 
-#!/bin/bash
+## BASH Script steps
 
-#CLI should be seted on 02.GIT_Local folder
-
-#cd 02.GIT_Local
-
+Create an empty Git repository
+```bash
 git init
 
 git config user.name "MikeBakinovski"
 git config user.email mike.bakinovski@gmail.com
-
+```
+Create an text file with home task for first commit
+```bash
 touch 02.Home_Task.txt
-printf "Initialize local repository on your test host. Create the following branches:
+printf "Home task text" > 02.Home_Task.txt
+```
 
-    master (init branch)
-        has 2 commits
-    dev (has been created from master)
-        has 2 commits from master + 2 additional
-    features/do_one (has been created from dev branch)
-        has 2 commits from master + 2 additional from dev + 1 additional
-    hotfix/we_gonna_die (has been created from master branch)
-        has 2 commits from master + 1 additional commit
-
-    Play the following situations:
-
-    Release phase - all commits should be inside master (except commits which is presented in branch hotfix)
-    Hotfix deploy - commit from hotfix/we_gonna_die branch should be in master first, then in another branches too
-    In the end of this \"play\" you should provide list of your commits in above mentioned branches. You can add this output into the final part of your report.
-
-    All your commands put into files 02.GIT.Local.md and add to your repository, then prepare PR (Pull Request)
-
-    IMPORTANT\!\!\! Use git markup for your report. See link
-
-    Additional: Create README.md with project description in your folder. You will be maintain its during our course till the final demo
-" > 02.Home_Task.txt
 
 # First commit to 'master' with 02.Home_Task.txt file.
 
@@ -115,3 +95,4 @@ git add --all
 git commit -m "HOTFIX DEPLOY TO 'features/do_one' BRANCH"
 
 git log --graph --all > finallog.txt
+
