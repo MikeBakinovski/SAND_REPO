@@ -1,8 +1,8 @@
 # 04. Infra home work 
 
 ## Vagrant file for both requested hosts
-```bash
-# -*- mode: ruby -*-
+```ruby
+# - *- mode: ruby -*-
 # vi: set ft=ruby 
 
 DEB_IP = "192.168.100.11" # Debian virtual mashine
