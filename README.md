@@ -2,7 +2,7 @@
 
 ## Vagrant file for both requested hosts
 ```ruby
-# -*- mode: ruby -*-
+# - *- mode: ruby -*-
 # vi: set ft=ruby 
 
 DEB_IP = "192.168.100.11" # Debian virtual mashine
@@ -101,7 +101,6 @@ Vagrant.configure("2") do |config|
     end
 
 end
-
 ```
 
 ### Both vagrant boxes placed to Vgrant cloud
@@ -177,7 +176,6 @@ Vagrant.configure("2") do |config|
 
     end
 end
-
 ```
 
 ## LXD initialisation
@@ -195,13 +193,11 @@ What IPv6 address should be used? (CIDR subnet notation, “auto” or “none�
 Would you like LXD to be available over the network? (yes/no) [default=no]: no
 Would you like stale cached images to be updated automatically? (yes/no) [default=yes] yes
 Would you like a YAML "lxd init" preseed to be printed? (yes/no) [default=no]: no
-
 ```
 
 ## Create linux container with CentOS 8
 ```
 sudo lxc launch images:centos/8
-
 ```
 
 ### Remame container and set memory limit
@@ -211,13 +207,11 @@ lxc move <old randome name> centos8
 lxc start centos8
 lxc config set centos8 limits.memory 512MB
 lxc exec centos8 bash # test go inside container
-
 ```
 
 ## Create linux container with Debian 10
 ```
 sudo lxc launch images:debian/10
-
 ```
 
 ### Remame container and set memory limit
@@ -227,7 +221,6 @@ lxc move <old randome name> debian10
 lxc start debian10
 lxc config set debian10 limits.memory 512MB
 lxc exec debian10 bash # test go inside container
-
 ```
 ### Login to VM as 'insider' user and check configs and containers list.
 
@@ -269,7 +262,6 @@ lxc.net.0.link = lxdbr0
 lxc.net.0.hwaddr = 00:16:3e:33:37:94
 lxc.net.0.name = eth0
 lxc.mount.entry = /var/lib/lxd/shmounts/centos8 dev/.lxd-mounts none bind,create=dir 0 0
-
 ```
 
 ### debian10 container config
@@ -310,7 +302,6 @@ lxc.net.0.link = lxdbr0
 lxc.net.0.hwaddr = 00:16:3e:b6:df:e0
 lxc.net.0.name = eth0
 lxc.mount.entry = /var/lib/lxd/shmounts/debian10 dev/.lxd-mounts none bind,create=dir 0 0
-
 ```
 ### Containers list
 
