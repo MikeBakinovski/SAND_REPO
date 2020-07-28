@@ -1,8 +1,8 @@
-# 03. Infra home work 
+# 04. Infra home work 
 
 ## Vagrant file for both requested hosts
-```ruby
-# - *- mode: ruby -*-
+```bash
+# -*- mode: ruby -*-
 # vi: set ft=ruby 
 
 DEB_IP = "192.168.100.11" # Debian virtual mashine
@@ -66,6 +66,8 @@ Vagrant.configure("2") do |config|
         SHELL
 
     end
+
+# CentOS virtual mashine
     config.vm.define "cen" do |cen|
 
         cen.vm.box = "centos/8"
@@ -305,7 +307,7 @@ lxc.mount.entry = /var/lib/lxd/shmounts/debian10 dev/.lxd-mounts none bind,creat
 ```
 ### Containers list
 
-PICTURE
+![LXD_insider](LXD_insider.png)
 
 
 
